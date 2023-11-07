@@ -9,16 +9,16 @@ pipeline {
       }
       stage('Docker Build') {
          steps 
-            // sh(script: 'docker compose build')
-            powershell(script: 'docker images -a')
+            sh(script: 'docker compose build')
+            // powershell(script: 'docker images -a')
             //Single line script or single call in ''
-            powershell(script: """
-                 cd azure-vote/
-                 docker images -a
-                 docker build -t jenkins-pipeline .
-                 docker images -a
-                 cd ..
-                 """ )
+            // powershell(script: """
+            //      cd azure-vote/
+            //      docker images -a
+            //      docker build -t jenkins-pipeline .
+            //      docker images -a
+            //      cd ..
+            //      """ )
                  //Where as to run multiple commands we do """...."""
                  //Docker powershell script 
          
